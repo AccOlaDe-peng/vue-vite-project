@@ -1,9 +1,10 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import HelloWorld from "../components/HelloWorld.vue";
+import Layout from "../components/Layout.vue";
 
 const routes: RouteRecordRaw[] = [
     { path: "/", component: HelloWorld },
-    { path: "/about", component: HelloWorld },
+    { path: "/about", component: Layout },
 ];
 
 const router = createRouter({

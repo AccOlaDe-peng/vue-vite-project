@@ -5,7 +5,21 @@ const count = ref(0)
 
 <template>
   <h1>Xxx</h1>
-
+    <el-button type="primary">Primary</el-button>
+    <el-row class="mb-4">
+        <el-button>Default</el-button>
+        <el-button type="primary">Primary</el-button>
+        <el-button type="success">Success</el-button>
+        <el-button type="info">Info</el-button>
+        <el-button type="warning">Warning</el-button>
+        <el-button type="danger">Danger</el-button>
+      </el-row>
+      <div class="common-layout">
+        <el-container>
+          <el-header>Header</el-header>
+          <el-main>Main</el-main>
+        </el-container>
+      </div>
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
