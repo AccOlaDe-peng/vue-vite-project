@@ -3,8 +3,8 @@ import HelloWorld from "../components/HelloWorld.vue";
 import Layout from "../components/Layout.vue";
 
 const routes: RouteRecordRaw[] = [
-    { path: "/", component: HelloWorld },
-    { path: "/about", component: Layout },
+    { path: "/", component: Layout },
+    { path: "/about", component: HelloWorld },
 ];
 
 const router = createRouter({
