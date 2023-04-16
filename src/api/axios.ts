@@ -1,4 +1,6 @@
 import axios from "axios";
+import { ElMessage } from "element-plus";
+// import { message as AntdMessage } from "antd";
 // import { REQUEST_ERROR_MESSAGE } from "../utils/constant/api";
 // import { getTokenAUTH } from "../utils/util/auth";
 
@@ -12,9 +14,10 @@ const instance = axios.create({
 instance.interceptors.request.use(
     (config) => {
         // 自动携带token
+        const token = "getTokenAUTH()";
         // const token = getTokenAUTH();
-        if ("token" && typeof window !== "undefined") {
-            config.headers.Authorization = "token";
+        if (token && typeof window !== "undefined") {
+            config.headers.Authorization = token;
         }
         return config;
     },
@@ -53,7 +56,7 @@ function httpErrorStatusHandle(error: any) {
     if (error.message.includes("Network"))
         message = window.navigator.onLine ? "服务端异常！" : "您断网了！";
 
-    // AntdMessage.error(message);
+    ElMessage.error(message);
 }
 
 export default instance;

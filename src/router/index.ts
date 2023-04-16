@@ -4,7 +4,7 @@ import Layout from "../components/Layout.vue";
 
 const routes: RouteRecordRaw[] = [
     { path: "/", component: Layout },
-    { path: "/about", component: HelloWorld },
+    // { path: "/about", component: HelloWorld },
 ];
 
 const router = createRouter({
@@ -13,21 +13,21 @@ const router = createRouter({
     routes, // `routes: routes` 的缩写
 });
 
-router.beforeEach((to, from, next) => {
-    console.log(to, from);
-    document.title = `${to.meta.title} | vue-manage-system`;
-    // const role = localStorage.getItem("ms_username");
-    // if (!role && to.path !== "/login") {
-    //     next("/login");
-    // }
-    //用户权限
-    // else if (to.meta.permiss && !permiss.key.includes(to.meta.permiss)) {
-    //     // 如果没有权限，则进入403
-    //     next("/403");
-    // }
-    // else {
-    next();
-    // }
-});
+// router.beforeEach((to, from, next) => {
+//     console.log(to, from);
+//     document.title = `${to.meta.title} | vue-manage-system`;
+//     // const role = localStorage.getItem("ms_username");
+//     // if (!role && to.path !== "/login") {
+//     //     next("/login");
+//     // }
+//     //用户权限
+//     // else if (to.meta.permiss && !permiss.key.includes(to.meta.permiss)) {
+//     //     // 如果没有权限，则进入403
+//     //     next("/403");
+//     // }
+//     // else {
+//     next();
+//     // }
+// });
 
 export default router;

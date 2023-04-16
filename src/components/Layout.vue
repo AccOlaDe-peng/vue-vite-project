@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import Menu from "./Menu.vue";
+import Menu from './Menu.vue';
 </script>
 <template>
     <div class="common-layout">
         <el-container>
-            <el-aside width="200px"><Menu /></el-aside>
+            <el-aside width="200px">Menu</el-aside>
             <el-container>
                 <el-header>Header</el-header>
                 <el-main>Main</el-main>
@@ -13,3 +13,9 @@ import Menu from "./Menu.vue";
         </el-container>
     </div>
 </template>
+
+<style scoped>
+.common-layout {
+    background-color: aqua;
+}
+</style>

@@ -22,6 +22,11 @@ export default defineConfig({
             localEnabled: true,
         }),
     ],
+    resolve: {
+        alias: {
+            "@": "/src",
+        },
+    },
     server: {
         port: 3300,
     },
