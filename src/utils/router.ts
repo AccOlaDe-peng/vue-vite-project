@@ -5,6 +5,7 @@ const getMainRouteFileList = async () => {
     const allRoutes: RouteRecordRaw[] = [];
     // import.meta.glob 批量导入文件
     const routeFileList = import.meta.glob("../router/main/**");
+    console.log(routeFileList);
     for (const path in routeFileList) {
         const mod: any = await routeFileList[path]();
         allRoutes.push(mod.default);

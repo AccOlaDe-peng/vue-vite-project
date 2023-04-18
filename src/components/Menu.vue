@@ -1,40 +1,73 @@
-<script lang="ts" setup>
-// import { useUserStore } from "@/store";
-import { useUserStore } from "@/store";
-import { computed } from "vue";
-import { useRoute } from "vue-router";
-
-const activeIndex = computed(() => {
-    return useRoute().path;
-});
-const menuList = computed(() => {
-    return useUserStore().menuList;
-});
-</script>
-
 <template>
+    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
+        <el-radio-button :label="false">expand</el-radio-button>
+        <el-radio-button :label="true">collapse</el-radio-button>
+    </el-radio-group>
     <el-menu
-        :default-active="activeIndex"
-        class="el-menu-demo"
-        router
-        mode="horizontal"
+        default-active="2"
+        class="el-menu-vertical-demo"
+        :collapse="isCollapse"
+        @open="handleOpen"
+        @close="handleClose"
     >
-        <template v-for="menu in menuList" :key="menu.id">
-            <!-- 没有子路由的情况 -->
-            <el-menu-item v-if="!menu.children" :index="'/main' + menu.path">
-                <span>{{ menu.name }}</span>
-            </el-menu-item>
-
-            <!-- 存在子路由的情况 -->
-            <el-sub-menu v-else :index="'/main' + menu.path">
-                <template #title>{{ menu.name }}</template>
-                <el-menu-item
-                    v-for="_menu in menu.children"
-                    :key="_menu.id"
-                    :index="'/main' + _menu.path"
-                    >{{ _menu.name }}</el-menu-item
-                >
-            </el-sub-menu>
-        </template>
+        <el-sub-menu index="1">
+          <template #title>
+            <el-icon><location /></el-icon>
+            <span>Navigator One</span>
+          </template>
+          <el-menu-item-group>
+            <template #title><span>Group One</span></template>
+            <el-menu-item index="1-1">item one</el-menu-item>
+            <el-menu-item index="1-2">item two</el-menu-item>
+          </el-menu-item-group>
+          <el-menu-item-group title="Group Two">
+            <el-menu-item index="1-3">item three</el-menu-item>
+          </el-menu-item-group>
+          <el-sub-menu index="1-4">
+            <template #title><span>item four</span></template>
+            <el-menu-item index="1-4-1">item one</el-menu-item>
+          </el-sub-menu>
+        </el-sub-menu>
+        <el-menu-item index="2">
+          <el-icon><icon-menu /></el-icon>
+          <template #title>Navigator Two</template>
+        </el-menu-item>
+        <el-menu-item index="3" disabled>
+          <el-icon><document /></el-icon>
+          <template #title>Navigator Three</template>
+        </el-menu-item>
+        <el-menu-item index="4">
+          <el-icon><setting /></el-icon>
+          <template #title>Navigator Four</template>
+        </el-menu-item>
     </el-menu>
 </template>
+<script lang="ts" setup>
+import { computed, ref } from "vue";
+import {
+    Document,
+    Menu as IconMenu,
+    Location,
+    Setting,
+} from '@element-plus/icons-vue'
+import { useRoute } from "vue-router";
+import useUserStore from "@/store/modules/useUserStore";
+
+const isCollapse = ref(true)
+
+const handleOpen = (key: string, keyPath: string[]) => {
+    console.log(key, keyPath)
+}
+
+const handleClose = (key: string, keyPath: string[]) => {
+    console.log(key, keyPath)
+}
+</script>
+
+<style scoped>
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+}
+</style>
+
