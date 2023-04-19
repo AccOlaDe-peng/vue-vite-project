@@ -1,8 +1,5 @@
 <template>
-    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-        <el-radio-button :label="false">expand</el-radio-button>
-        <el-radio-button :label="true">collapse</el-radio-button>
-    </el-radio-group>
+    <el-icon><Grid /></el-icon>
     <el-menu
         default-active="2"
         class="el-menu-vertical-demo"
@@ -49,12 +46,13 @@ import {
     Menu as IconMenu,
     Location,
     Setting,
+    Grid
 } from '@element-plus/icons-vue'
 import { useRoute } from "vue-router";
-import useUserStore from "@/store/modules/useUserStore";
-
-const isCollapse = ref(true)
-
+import useLayoutStore from "@/store/modules/useLayoutStore";
+const layout = useLayoutStore()
+// const isCollapse = layout.getIsCollapse
+const isCollapse = computed(() => layout.getIsCollapse)
 const handleOpen = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
 }

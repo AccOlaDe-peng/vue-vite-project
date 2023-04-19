@@ -1,27 +1,31 @@
-<script setup lang="ts">
-import Menu from './Menu.vue';
-</script>
+
 <template>
     <div class="common-layout">
         <el-container>
-            <el-aside class="el-aside"><Menu /></el-aside>
+            <el-aside class="el-aside" :style="{width: isCollapse }"><Menu /></el-aside>
             <el-container>
-                <el-header class="el-header">Header</el-header>
+                <el-header class="el-header"><Header /></el-header>
                 <el-main class="el-main">Main</el-main>
                 <el-footer class="el-footer">Footer</el-footer>
             </el-container>
         </el-container>
     </div>
 </template>
-
+<script setup lang="ts">
+import Menu from './Menu.vue';
+import Header from './Header.vue';
+import useLayoutStore from '@/store/modules/useLayoutStore';
+import { computed } from 'vue';
+const layout = useLayoutStore()
+const isCollapse = computed(() => layout.getIsCollapse? "63px" : "200px")
+</script>
 <style scoped>
 .common-layout {
     width: 100vw;
-    background-color: aqua;
 }
 .el-aside {
-    width: 200px;
     height: 100vh;
+    border-right: 1px solid #e4e7ed;
     background-color: #fff;
 }
 
@@ -31,8 +35,9 @@ import Menu from './Menu.vue';
 
 .el-header {
     height: 48px;
-    background-color: #34e;
+    padding: 0
 }
+
 
 .el-footer{
     height: 60px;
