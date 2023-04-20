@@ -1,5 +1,4 @@
 <template>
-    <el-icon><Grid /></el-icon>
     <el-menu
         default-active="2"
         class="el-menu-vertical-demo"
@@ -46,7 +45,6 @@ import {
     Menu as IconMenu,
     Location,
     Setting,
-    Grid
 } from '@element-plus/icons-vue'
 import { useRoute } from "vue-router";
 import useLayoutStore from "@/store/modules/useLayoutStore";

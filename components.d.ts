@@ -27,8 +27,12 @@ declare module '@vue/runtime-core' {
     Header: typeof import('./src/components/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Layout: typeof import('./src/components/Layout.vue')['default']
+    LogoTitle: typeof import('./src/components/LogoTitle.vue')['default']
     Menu: typeof import('./src/components/Menu.vue')['default']
+    PrHeader: typeof import('./src/components/PrHeader.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Sider: typeof import('./src/components/Sider.vue')['default']
+    SiderMenu: typeof import('./src/components/SiderMenu.vue')['default']
   }
 }

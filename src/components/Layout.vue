@@ -1,23 +1,17 @@
 
 <template>
-    <div class="common-layout">
+    <el-container class="common-layout">
+        <Sider />
         <el-container>
-            <el-aside class="el-aside" :style="{width: isCollapse }"><Menu /></el-aside>
-            <el-container>
-                <el-header class="el-header"><Header /></el-header>
-                <el-main class="el-main">Main</el-main>
-                <el-footer class="el-footer">Footer</el-footer>
-            </el-container>
+            <el-header class="el-header"><PrHeader /></el-header>
+            <el-main class="el-main">Main</el-main>
+            <el-footer class="el-footer">Footer</el-footer>
         </el-container>
-    </div>
+    </el-container>
 </template>
 <script setup lang="ts">
-import Menu from './Menu.vue';
-import Header from './Header.vue';
-import useLayoutStore from '@/store/modules/useLayoutStore';
-import { computed } from 'vue';
-const layout = useLayoutStore()
-const isCollapse = computed(() => layout.getIsCollapse? "63px" : "200px")
+import Sider from './Sider.vue';
+import PrHeader from './PrHeader.vue';
 </script>
 <style scoped>
 .common-layout {
