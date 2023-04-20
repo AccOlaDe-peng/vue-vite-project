@@ -1,7 +1,11 @@
 <template>
     <div class="sider">
-        <LogoTitle />
-        <SiderMenu />
+        <transition name="el-zoom-in-center">
+            <LogoTitle />
+        </transition>
+        <transition name="el-zoom-in-center">
+            <SiderMenu />
+        </transition>
     </div>
 </template>
 
