@@ -1,15 +1,17 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HelloWorld from "../components/HelloWorld.vue";
+import Login from "../pages/user/login.vue";
 import Layout from "../components/Layout.vue";
 
 const routes: RouteRecordRaw[] = [
-    { path: "/", component: Layout },
-    // { path: "/about", component: HelloWorld },
+	{ path: "/", component: Layout },
+	{ path: "/user/login", component: Login },
+	// { path: "/about", component: HelloWorld },
 ];
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
+	history: createWebHistory(),
+	routes,
 });
 
 // router.beforeEach((to, from, next) => {

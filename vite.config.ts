@@ -8,33 +8,36 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    plugins: [
-        vue(),
-        AutoImport({
-            resolvers: [ElementPlusResolver()],
-        }),
-        Components({
-            resolvers: [ElementPlusResolver()],
-        }),
-        // 配置mock
-        viteMockServe({
-            mockPath: "/mock",
-            localEnabled: true,
-        }),
-    ],
-    resolve: {
-        alias: {
-            "@": "/src",
-        },
-    },
-    server: {
-        port: 3300,
-    },
-    css: {
-        preprocessorOptions: {
-            scss: {
-                additionalData: `@import "./src/styles/main.scss";`,
-            },
-        },
-    },
+	plugins: [
+		vue(),
+		AutoImport({
+			resolvers: [ElementPlusResolver()],
+		}),
+		Components({
+			resolvers: [ElementPlusResolver()],
+		}),
+		// 配置mock
+		viteMockServe({
+			mockPath: "/mock",
+			localEnabled: true,
+		}),
+	],
+	resolve: {
+		alias: {
+			"@": "/src",
+		},
+	},
+	server: {
+		port: 3300,
+		hmr: {
+			overlay: false,
+		},
+	},
+	css: {
+		preprocessorOptions: {
+			scss: {
+				additionalData: `@import "./src/styles/main.scss";`,
+			},
+		},
+	},
 });
