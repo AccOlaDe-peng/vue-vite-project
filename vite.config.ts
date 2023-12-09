@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-// import VueSetupExtend from "vite-plugin-vue-setup-extend";
+import VueJSX from "@vitejs/plugin-vue-jsx";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
 import { viteMockServe } from "vite-plugin-mock";
@@ -10,6 +10,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 export default defineConfig({
 	plugins: [
 		vue(),
+		VueJSX(),
 		AutoImport({
 			resolvers: [ElementPlusResolver()],
 		}),
@@ -28,6 +29,7 @@ export default defineConfig({
 		},
 	},
 	server: {
+		host: "0.0.0.0",
 		port: 3300,
 		hmr: {
 			overlay: false,
