@@ -1,30 +1,27 @@
 <template>
-  <el-config-provider :size="size" :z-index="zIndex">
-    <h1>Hello App!</h1>
-    <p><strong>Current route path:</strong> {{ $route.fullPath }}</p>
-    <nav>
-      <RouterLink to="/">Go to Home</RouterLink>
-      <RouterLink to="/about">Go to About</RouterLink>
-    </nav>
-    <main>
-      <RouterView />
-    </main>
+  <el-config-provider :size="size" :z-index="zIndex" :locale="zhCn">
+    <router-view v-slot="{ Component }">
+      <transition
+        :name="
+          typeof route.meta.transition === 'string'
+            ? route.meta.transition
+            : 'fade'
+        "
+      >
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </transition>
+    </router-view>
   </el-config-provider>
 </template>
 
-<script>
-import { defineComponent } from "vue";
+<script lang="ts" setup>
 import { ElConfigProvider } from "element-plus";
+import { zhCn } from "element-plus/es/locales.mjs";
+import { useRoute } from "vue-router";
 
-export default defineComponent({
-  components: {
-    ElConfigProvider,
-  },
-  setup() {
-    return {
-      zIndex: 3000,
-      size: "small",
-    };
-  },
-});
+const size = "small";
+const zIndex = 3000;
+const route = useRoute();
 </script>
