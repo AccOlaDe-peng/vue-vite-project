@@ -22,6 +22,15 @@ export const constantRoutes: RouteRecordRaw[] = [
           affix: true,
         },
       },
+      {
+        path: "list",
+        component: () => import("@/pages/list/index.vue"),
+        name: "List",
+        meta: {
+          title: "列表",
+          icon: "el-icon-s-data",
+        },
+      },
     ],
   },
 ];
