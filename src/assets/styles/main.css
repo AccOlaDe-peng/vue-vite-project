@@ -2,18 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-//业务页面几乎都应该在根元素上挂载 class="app-container"，以保持页面美观
-.app-container {
-  padding: 20px;
-}
-
+/* Your custom styles here */
 html {
   height: 100%;
-  // 灰色模式
+  /* 灰色模式 */
   &.grey-mode {
     filter: grayscale(1);
   }
-  // 色弱模式
+  /* 色弱模式 */
   &.color-weakness {
     filter: invert(0.8);
   }

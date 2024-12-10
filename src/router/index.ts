@@ -4,12 +4,10 @@ import {
   type RouteRecordRaw,
 } from "vue-router";
 
-const Layout = () => import("@@/Layout/index.vue");
-
 export const constantRoutes: RouteRecordRaw[] = [
   {
     path: "/",
-    component: Layout,
+    component: () => import("@@/Layout/index.vue"),
     redirect: "/dashboard",
     children: [
       {

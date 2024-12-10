@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="h-full">
     <el-container>
       <el-header>header</el-header>
       <el-container>
