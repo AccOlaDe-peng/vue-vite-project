@@ -4,8 +4,8 @@ import { createPinia } from "pinia";
 import { router } from "@/router";
 
 import "element-plus/theme-chalk/dark/css-vars.css";
-import "./assets/styles/main.css";
-import "./assets/styles/dark/css-vars.css";
+import "./assets/styles/main.scss";
+import "./assets/styles/dark/css-vars.scss";
 
 const app = createApp(App);
 const pinia = createPinia();
