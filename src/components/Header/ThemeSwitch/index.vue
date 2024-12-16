@@ -1,16 +1,16 @@
 <template>
   <el-switch
     v-model="isDark"
-    class="mt-2"
     inline-prompt
-    :active-icon="Check"
-    :inactive-icon="Close"
+    size="medium"
+    :active-icon="Sunny"
+    :inactive-icon="Moon"
     @click="(e: MouseEvent) => handleChangeTheme(e)"
   />
 </template>
 <script lang="ts" setup>
 import { useTheme } from "@/hooks/useTheme";
-import { Check, Close } from "@element-plus/icons-vue";
+import { Sunny, Moon } from "@element-plus/icons-vue";
 
 const { isDark, switchTheme } = useTheme();
 

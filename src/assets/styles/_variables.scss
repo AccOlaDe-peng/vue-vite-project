@@ -1,0 +1,10 @@
+//默认样式变量
+:root {
+  --v3-bg-color: var(--el-bg-color);
+  --text-color: var(--el-text-color);
+  --border-color: #ddd;
+}
+
+html.dark {
+  --v3-bg-color: #c74545;
+}

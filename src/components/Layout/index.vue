@@ -1,22 +1,29 @@
 <template>
-  <div class="h-full">
-    <el-container class="h-full">
-      <el-header height="55px">
-        <Header />
-      </el-header>
+  <el-container class="h-full">
+    <el-header class="header">
+      <Header />
+    </el-header>
+    <el-container>
+      <el-aside class="aside">aside</el-aside>
       <el-container>
-        <el-aside width="200px">aside</el-aside>
-        <el-container>
-          <el-main>
-            <router-view />
-          </el-main>
-          <el-footer>footer</el-footer>
-        </el-container>
+        <el-main>
+          <router-view />
+        </el-main>
+        <el-footer>footer</el-footer>
       </el-container>
     </el-container>
-  </div>
+  </el-container>
 </template>
 
 <script lang="ts" setup>
 import Header from "@@/Header/index.vue";
 </script>
+
+<style lang="scss" scoped>
+.header {
+  padding: 0;
+}
+.aside {
+  width: 200px;
+}
+</style>
