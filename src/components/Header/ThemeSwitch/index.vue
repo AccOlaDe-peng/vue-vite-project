@@ -27,8 +27,8 @@ const handleChangeTheme = ({ clientX, clientY }: MouseEvent) => {
       v-model="isDark"
       inline-prompt
       size="medium"
-      :active-icon="Sunny"
-      :inactive-icon="Moon"
+      :active-icon="Moon"
+      :inactive-icon="Sunny"
       @click="(e: MouseEvent) => handleChangeTheme(e)"
     />
   </el-tooltip>
