@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="nav">
-      <div class="logo"></div>
+      <Logo />
     </div>
     <div class="option">
       <ThemeSwitch />
@@ -11,6 +11,7 @@
 
 <script lang="ts" setup>
 import ThemeSwitch from "./ThemeSwitch/index.vue";
+import Logo from "./Logo/index.vue";
 </script>
 
 <style lang="scss" scoped>
@@ -27,15 +28,5 @@ import ThemeSwitch from "./ThemeSwitch/index.vue";
   height: 100%;
   display: flex;
   align-items: center;
-}
-.logo {
-  margin-left: 10px;
-  height: 40px;
-  width: 120px;
-  background-image: url("/image/logo_brand.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  margin-right: 100px;
 }
 </style>
