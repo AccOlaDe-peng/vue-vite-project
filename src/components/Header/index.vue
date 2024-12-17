@@ -1,18 +1,20 @@
+<script lang="ts" setup>
+import ThemeSwitch from "./ThemeSwitch/index.vue";
+import LangSwitch from "./LangSwitch/index.vue";
+import Logo from "./Logo/index.vue";
+</script>
+
 <template>
   <div class="header">
     <div class="nav">
       <Logo />
     </div>
     <div class="option">
+      <LangSwitch />
       <ThemeSwitch />
     </div>
   </div>
 </template>
-
-<script lang="ts" setup>
-import ThemeSwitch from "./ThemeSwitch/index.vue";
-import Logo from "./Logo/index.vue";
-</script>
 
 <style lang="scss" scoped>
 .header {
@@ -28,5 +30,11 @@ import Logo from "./Logo/index.vue";
   height: 100%;
   display: flex;
   align-items: center;
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-right: 40px;
 }
 </style>

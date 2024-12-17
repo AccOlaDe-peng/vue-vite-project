@@ -1,13 +1,3 @@
-<template>
-  <el-switch
-    v-model="isDark"
-    inline-prompt
-    size="medium"
-    :active-icon="Sunny"
-    :inactive-icon="Moon"
-    @click="(e: MouseEvent) => handleChangeTheme(e)"
-  />
-</template>
 <script lang="ts" setup>
 import { useTheme } from "@/hooks/useTheme";
 import { Sunny, Moon } from "@element-plus/icons-vue";
@@ -30,3 +20,16 @@ const handleChangeTheme = ({ clientX, clientY }: MouseEvent) => {
   document.startViewTransition ? document.startViewTransition(handler) : null;
 };
 </script>
+
+<template>
+  <el-tooltip content="切换主题" placement="top">
+    <el-switch
+      v-model="isDark"
+      inline-prompt
+      size="medium"
+      :active-icon="Sunny"
+      :inactive-icon="Moon"
+      @click="(e: MouseEvent) => handleChangeTheme(e)"
+    />
+  </el-tooltip>
+</template>

@@ -9,10 +9,10 @@ export const useTheme = () => {
     const body = document.documentElement as HTMLElement;
     if (body.classList.contains("dark")) {
       body.classList.remove("dark");
-      isDark.value = true;
+      isDark.value = false;
     } else {
       body.classList.add("dark");
-      isDark.value = false;
+      isDark.value = true;
     }
   };
 
